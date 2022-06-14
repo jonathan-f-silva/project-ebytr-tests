@@ -1,0 +1,24 @@
+{
+  "name": "project-ebytr-tests",
+  "version": "0.1.0",
+  "description": "Testes E2E para o projeto Ebytr",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "TZ=UTC cypress open",
+    "cy:run": "TZ=UTC cypress run"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "[filepath].{js,ts}",
+      "cypress/e2e/**/*.{js,ts}"
+    ]
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^11.0.0-rc1",
+    "@testing-library/cypress": "^8.0.3",
+    "cypress": "^10.1.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "mongodb": "^4.7.0",
+    "typescript": "^4.7.3"
+  }
+}
