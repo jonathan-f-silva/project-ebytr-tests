@@ -1,12 +1,11 @@
-import { Given } from 'cypress-cucumber-preprocessor/steps';
-
+import { Given } from '@badeball/cypress-cucumber-preprocessor';
 import TEST_IDS from './testIds';
 
 Given('que eu entro no app', () => {
   cy.visit('/');
 });
 
-Given('eu digito uma tarefa com o texto {string}', (texto) => {
+Given('eu digito uma tarefa com o texto {string}', (texto: string) => {
   cy.get(`[data-testid^=${TEST_IDS.todoInput}]`)
     .type(texto);
 });
@@ -22,7 +21,7 @@ Given('eu adiciono {int} tarefas', (quantity) => {
   }
 });
 
-Given('eu removo a tarefa {int}', (position) => {
+Given('eu removo a tarefa {int}', (position: number) => {
   cy.get(`[data-testid^=${TEST_IDS.todoDelButton}]`)
     .eq(position - 1).click();
 });
